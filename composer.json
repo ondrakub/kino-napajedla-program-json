@@ -1,0 +1,13 @@
+{
+    "name": "ondrakub/kino-napajedla-program-json",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ondřej Kubíček",
+            "email": "kubon@kubon.cz"
+        }
+    ],
+    "require": {
+        "paquettg/php-html-parser": "^2.2"
+    }
+}
