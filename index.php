@@ -17,14 +17,13 @@ $programs = array_map(function ($program) {
 
 	$premiere = $program->find('.col1')[0] ? $program->find('.col1')[0]->text() : '';
 
-	$price = replace( $program->find('.col2')[0]->text());
+	$price = $program->find('.col2')[0]->text();
 	preg_match('!\d+!', trim(replace($program->find('.col3')[0]->text())), $movieTime);
 	$movieTime = $movieTime[0];
 
 	list($day, $month, $year) = explode('.', trim($date));
 
-	$monthMinusOne = $month - 1;
-	$start = DateTime::createFromFormat('Y-m-d H:i', "$year-$monthMinusOne-$day $time");
+	$start = DateTime::createFromFormat('Y-m-d H:i', "$year-$month-$day $time");
 	$end = clone $start;
 
 	$end->add(new DateInterval('PT' . $movieTime . 'M'));
